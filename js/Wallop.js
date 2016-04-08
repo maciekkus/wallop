@@ -117,6 +117,7 @@
     this.updateButtonStates();
 
     this.event.detail.currentItemIndex = this.currentItemIndex;
+    this.event.detail.isForwards = isForwards;
     this.$selector.dispatchEvent(this.event);
   };
 
@@ -168,7 +169,8 @@
     this.event = new CustomEvent('change', {
       detail: {
         wallopEl: _this.$selector,
-        currentItemIndex: Number(_this.currentItemIndex)
+        currentItemIndex: Number(_this.currentItemIndex),
+        isForwards: _this.isForwards
       },
       bubbles: true,
       cancelable: true
